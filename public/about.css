@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body{
+  
+    background-size: cover; 
+    
+}
+
+.container h1{
+    display: inline-block;
+    font-size: 35px;
+    margin-bottom: 20px;
+    padding: 13px 0;
+    border-bottom: 3px solid black;
+    
+
+}

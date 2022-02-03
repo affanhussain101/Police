@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>SIGNUP</title>
+    <link rel="stylesheet" type="text/css" href="Signup.css">
+
+</head>
+<body>
+    <div class="container">
+    <form action="/FIR" class="form" method="post">
+        <h2 class="tab">FIR</h2>
+        <div class="box">
+        <input type="number" name="fir_no" placeholder="Fir_no" >
+        </div>
+        <div class="box">
+        <input type="date" name="date" placeholder="Regestration_Date" >
+        </div>
+        <div class="box">
+        <input type="text" name="name" placeholder="Informant Name" >
+        </div>
+        <div class="box">
+        <input type="text" name="place" placeholder="Crime Place" >
+        </div>
+        <div class="box">
+            <input type="number" name="crime_id" placeholder="Crime_id" >
+            </div>
+        <button type="submit" class="btn">Finish</button>
+    </form>
+    </div>
+
+    <div class="table-data">
+        <h2>List Of Crime</h2>
+            <table border="1">
+                <tr>
+                    <th>S.No</th>
+                    <th>Crime_ID</th>
+                    <th>Crime Name</th>
+                </tr>
+                
+                <%
+                if(Cri.length!=0){
+                var i=1;
+                Cri.forEach(function(data){
+                %>
+                <tr>
+                    <td><%=i; %></td>
+                    <td><%=data.CRIME_ID %></td>
+                    <td><%=data.TYPE %></td>
+                </tr>
+                <%  i++; }) %>
+                <% } else{ %>
+                    <tr>
+                        <td colspan="7">No Data Found</td>
+                    </tr>
+                <% } %>
+            </table>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>SIGNUP</title>
+    <link rel="stylesheet" type="text/css" href="Signup.css">
+
+</head>
+<body>
+    <div class="outer">
+    <div class="container">
+        <div class="inner1">
+    <form action="/Signup" class="form" method="post">
+        <h1>SIGN UP</h1>
+        <div class="box">
+        <input type="text" name="name" placeholder="First Name" >
+        </div>
+        <div class="box">
+        <input type="text" name="police_id" placeholder="Police_id" >
+        </div>
+        <div class="box">
+        <input type="number" name="number" placeholder="Phone Number" >
+        </div>
+        <div class="box">
+        <input type="text" name="DESIGNATION" placeholder="DESIGNATION" >
+        </div>
+        <div class="box">
+            <input type="email" name="email" placeholder="Email" >
+            </div>
+        <div class="box">
+        <input type="password" name="password" placeholder="Password" >
+        </div>
+        <div class="box">
+        <input type="number" name="Station_id" placeholder="Station_id">
+        </div>
+        <button type="submit" class="btn">Finish</button>
+    </form>
+    </div>
+    </div>
+    <div class="inner2">
+    <div class="table-data">
+        <h2>List Of Stations</h2>
+            <table border="1">
+                <tr>
+                    <th>S.No</th>
+                    <th>Station_ID</th>
+                    <th>Station Name</th>
+                </tr>
+                
+                <%
+                if(Station.length!=0){
+                var i=1;
+                Station.forEach(function(data){
+                %>
+                <tr>
+                    <td><%=i; %></td>
+                    <td><%=data.STATION_ID %></td>
+                    <td><%=data.NAME %></td>
+                </tr>
+                <%  i++; }) %>
+                <% } else{ %>
+                    <tr>
+                        <td colspan="7">No Data Found</td>
+                    </tr>
+                <% } %>
+            </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

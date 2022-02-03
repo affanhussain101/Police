@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Criminal</title>
+  <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <div class="table-data">
+<h2 class="tab">List Of Criminal</h2>
+    <table>
+        <tr>
+            <th>Criminal_ID</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Fir_NO</th>
+            <th>Crime_Id</th>
+            <th>POLICE_ID</th>
+            <th>Delete</th>
+        </tr>
+        
+        <%
+        if(Criminal.length!=0){
+        var i=1;
+        Criminal.forEach(function(data){
+        %>
+        <tr>
+            <!-- <td><%=i; %></td> -->
+            <td><%=data.CRIMINAL_ID %></td>
+            <td><%=data.NAME %></td>
+            <td><%=data.ADDRESS%></td>
+            <td><%=data.FIR_NO %></td>
+            <td><%=data.CRIME_ID %></td>
+            <td><%=data.POLICE_ID %></td>
+            <td><a href="/Criminal/delete/<%=data.CRIMINAL_ID%>"><button class="tabButton">Delete</button></a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+    <br>
+    <a class="mr-5 hover:text-gray-900" onclick="location.href='/FIR'"><button class="tabButtonG">Add Criminal</button></a>
+    <button type="submit" class="tabButtonG" onclick="location.href='/Main'">Main Page</button>
+</body>
+</html>
